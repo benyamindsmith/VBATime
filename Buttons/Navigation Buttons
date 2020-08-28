@@ -1,0 +1,46 @@
+Sub returnToA1()
+
+    Range("A1").Select
+    
+End Sub
+
+Sub MoveDown()
+    ActiveCell.Offset(1, 0).Select
+End Sub
+
+Sub MoveUp()
+    ActiveCell.Offset(-1, 0).Select
+End Sub
+
+Sub MoveRight()
+    ActiveCell.Offset(0, 1).Select
+    
+End Sub
+
+Sub MoveLeft()
+
+    ActiveCell.Offset(0, -1).Select
+    
+End Sub
+
+
+Sub MoveNorthEast()
+    ActiveCell.Offset(-1, 1).Select
+    
+End Sub
+
+
+Sub MoveSouthEast()
+    ActiveCell.Offset(1, 1).Select
+    
+End Sub
+
+Sub MoveNorthWest()
+    ActiveCell.Offset(-1, -1).Select
+    
+End Sub
+
+Sub MoveSouthWest()
+    ActiveCell.Offset(1, -1).Select
+    
+End Sub
