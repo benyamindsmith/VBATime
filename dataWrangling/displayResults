@@ -1,0 +1,16 @@
+Option Explicit
+
+' A function to make your own "display window" to see how your subroutine is doing
+
+Sub displayResults()
+ On Error Resume Next
+ Worksheets("Result").Delete
+ On Error GoTo 0
+ Worksheets.Add
+ ActiveSheet.Name = "Result"
+ 
+ ' Add the rest of your calculations
+ ' here
+ 
+ 
+End Sub
