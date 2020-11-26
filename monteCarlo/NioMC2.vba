@@ -60,7 +60,9 @@ Sub displayResults()
 
  End With
  Next j
+ If t < 100 Then
  Range("D:D").EntireColumn.Insert
+ End If
  Next t
 
 End Sub
