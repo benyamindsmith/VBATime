@@ -45,25 +45,34 @@ Sub displayResults()
  Dim simNumber As Integer
  Dim t As Integer
  simNumber = 100
- 
+ 'iteration
  For t = 1 To simNumber
+ 'the actual monte carlo
  Range("D1").Value = "MC Estimate"
  Range("D2").Value = Range("B2").Value
  
  Dim j As Integer
  For j = 1 To rowLength
- With Range("D" & j + 2 & ":D" & j + 2)
  
-  .Value = Range("D" & j + 1 & ":D" & j + 1) * _
+ 'Do loop error handles
+ Do
+ On Error Resume Next
+ With Range("D" & j + 2)
+ 
+  .Value = Range("D" & j + 1) * _
     Exp( _
             WorksheetFunction.Small(changeVals, WorksheetFunction.RandBetween(1, rowLength)))
-
  End With
+ Loop Until (Err.Number = 0)
+ 
+ 
  Next j
  If t < 100 Then
  Range("D:D").EntireColumn.Insert
  End If
  Next t
 
+
 End Sub
+
 
